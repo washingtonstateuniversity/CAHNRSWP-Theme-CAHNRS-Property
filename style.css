@@ -6,3 +6,7 @@ Author: CAHNRS Communications, Phil Cable
 Author URI: http://cahnrs.wsu.edu/communications/
 Template: spine
 */
+
+.main-header {
+	height: 3rem;
+}

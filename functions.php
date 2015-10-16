@@ -13,7 +13,7 @@ class WSU_CAHNRS_Property_Theme {
 	
 	public function __construct() {
 		add_action( 'init', array( $this, 'init' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 1 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'dequeue_scripts' ), 21 );
 		add_action( 'cahnrswp_site_header', array( $this, 'cahnrswp_default_header' ), 1 );
 		add_filter( 'mce_buttons_2', array( $this, 'mce_buttons_2' ) );

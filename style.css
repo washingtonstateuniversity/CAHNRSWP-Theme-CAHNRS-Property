@@ -8,10 +8,5 @@ Template: spine
 */
 
 .main-header {
-	height: 3rem;
-}
-
-/* temp */
-div > .article-header {
-	padding: 2rem 2rem 0 2rem;
+	height: auto;
 }

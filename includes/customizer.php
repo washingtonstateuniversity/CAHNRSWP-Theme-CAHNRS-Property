@@ -5,7 +5,6 @@ add_filter( 'spine_option_defaults', 'extension_spine_option_defaults' );
  * Reset certain Spine customizer option defaults.
  */
 function extension_spine_option_defaults( $defaults ) {
-	$defaults['campus_location'] = 'extension';
 	$defaults['bleed'] = false;
 	$defaults['articletitle_show'] = false;
 	$defaults['articletitle_header'] = true;
@@ -84,6 +83,24 @@ function extension_property_customize_register( $wp_customize ) {
 		'section' => 'cahnrs_header',
 		'settings' => 'spine_options[cahnrs_header_fixed]',
 		'type' => 'checkbox',
+	));
+
+	$wp_customize->add_setting('spine_options[cahnrs_tooling]', array(
+		'default'    => '1',
+		'capability' => 'edit_theme_options',
+		'type'       => 'option',
+	));
+
+	$wp_customize->add_control('cahnrs_tooling', array(
+		'label'      => 'CAHNRS Tooling',
+		'section'    => 'section_spine_advanced_options',
+		'settings'   => 'spine_options[cahnrs_tooling]',
+		'type'       => 'select',
+		'choices'    => array(
+			'1'  => '1',
+			'develop' => 'develop',
+			'disable' => 'disable'
+		),
 	));
 
 }

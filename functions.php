@@ -68,16 +68,24 @@ class WSU_CAHNRS_Property_Theme {
 	 * Enqueue scripts and styles required for front end pageviews.
 	 */
 	public function enqueue_scripts() {
-		wp_enqueue_style( 'cahnrs', 'http://m1.wpdev.cahnrs.wsu.edu/global/cahnrs.css', array( 'spine-theme' ) );
-		wp_enqueue_style( 'spine-theme-child', get_stylesheet_directory_uri() . '/style.css', array( 'cahnrs' ) );
-		wp_enqueue_script( 'cahnrs', 'http://m1.wpdev.cahnrs.wsu.edu/global/cahnrs.js', array( 'jquery' ) );
+		$cahnrs_tooling = spine_get_option( 'cahnrs_tooling' );
+		if ( 'develop' !== $cahnrs_tooling && 'disable' !== $cahnrs_tooling && 0 === absint( $cahnrs_tooling ) ) {
+			$cahnrs_tooling = 1;
+		}
+		if ( 'disable' !== $cahnrs_tooling ) {
+			wp_enqueue_style( 'cahnrs', 'http://m1.wpdev.cahnrs.wsu.edu/cahnrs-spine-tooling/styles/cahnrs.css', array( 'spine-theme' ) );
+			wp_enqueue_script( 'cahnrs', 'http://m1.wpdev.cahnrs.wsu.edu/cahnrs-spine-tooling/scripts/cahnrs.js', array( 'jquery' ) );
+			/*wp_enqueue_style( 'cahnrs', 'http://repo.wsu.edu/cahnrs/' . $cahnrs_tooling . '/cahnrs.min.css', array( 'spine-theme' ) );
+			wp_enqueue_script( 'cahnrs', 'http://repo.wsu.edu/cahnrs/' . $cahnrs_tooling . '/cahnrs.min.js', array( 'jquery' ) );*/
+		}
 	}
 
 	/**
-	 * Dequeue Spine Bookmark stylesheet. This is only a precaution.
+	 * Dequeue Spine Bookmark stylesheet (only a precaution) and empty child theme stylesheet.
 	 */
 	public function dequeue_scripts() {
 		wp_dequeue_style( 'spine-theme-extra' );
+		wp_dequeue_style( 'spine-theme-child' );
 	}
 
 	/**

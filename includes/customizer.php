@@ -103,4 +103,17 @@ function extension_property_customize_register( $wp_customize ) {
 		),
 	));
 
+	$wp_customize->add_setting('spine_options[cahnrs_fixed_header_behavior]', array(
+		'default'    => '',
+		'capability' => 'edit_theme_options',
+		'type'       => 'option',
+	));
+
+	$wp_customize->add_control('cahnrs_fixed_header_behavior', array(
+		'label'      => 'Disable Fixed CAHNRS Header JS',
+		'section'    => 'section_spine_advanced_options',
+		'settings'   => 'spine_options[cahnrs_fixed_header_behavior]',
+		'type'       => 'checkbox',
+	));
+
 }

@@ -12,6 +12,7 @@ if ( is_archive() ) {
 ?>
 
 <div class="cahnrs-header-group<?php
+	echo ( spine_get_option( 'cahnrs_fixed_header_behavior' ) ) ? ' disable-js' : '';
 	echo ( spine_get_option( 'cahnrs_header_bg_color' ) ) ? ' ' . esc_attr( spine_get_option( 'cahnrs_header_bg_color' ) ) : ' gray';
 	echo ( spine_get_option( 'cahnrs_header_fixed' ) ) ? ' fixed' : '';
 	echo ( spine_get_option( 'cahnrs_header_bg_vellum' ) && has_post_thumbnail() && is_page() ) ? ' ' . esc_attr( spine_get_option( 'cahnrs_header_bg_vellum' ) ) : '';

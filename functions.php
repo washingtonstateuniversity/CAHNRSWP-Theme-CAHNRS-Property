@@ -70,13 +70,11 @@ class WSU_CAHNRS_Property_Theme {
 	public function enqueue_scripts() {
 		$cahnrs_tooling = spine_get_option( 'cahnrs_tooling' );
 		if ( 'develop' !== $cahnrs_tooling && 'disable' !== $cahnrs_tooling && 0 === absint( $cahnrs_tooling ) ) {
-			$cahnrs_tooling = 1;
+			$cahnrs_tooling = 0;
 		}
 		if ( 'disable' !== $cahnrs_tooling ) {
-			wp_enqueue_style( 'cahnrs', 'http://m1.wpdev.cahnrs.wsu.edu/cahnrs-spine-tooling/styles/cahnrs.css', array( 'spine-theme' ) );
-			wp_enqueue_script( 'cahnrs', 'http://m1.wpdev.cahnrs.wsu.edu/cahnrs-spine-tooling/scripts/cahnrs.js', array( 'jquery' ) );
-			/*wp_enqueue_style( 'cahnrs', 'http://repo.wsu.edu/cahnrs/' . $cahnrs_tooling . '/cahnrs.min.css', array( 'spine-theme' ) );
-			wp_enqueue_script( 'cahnrs', 'http://repo.wsu.edu/cahnrs/' . $cahnrs_tooling . '/cahnrs.min.js', array( 'jquery' ) );*/
+			wp_enqueue_style( 'cahnrs', 'http://repo.wsu.edu/cahnrs/' . $cahnrs_tooling . '/cahnrs.min.css', array( 'spine-theme' ) );
+			wp_enqueue_script( 'cahnrs', 'http://repo.wsu.edu/cahnrs/' . $cahnrs_tooling . '/cahnrs.min.js', array( 'jquery' ) );
 		}
 	}
 

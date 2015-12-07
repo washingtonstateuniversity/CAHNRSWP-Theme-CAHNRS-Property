@@ -94,7 +94,7 @@ class WSU_CAHNRS_Property_Theme {
 	}
 
 	/**
-	 * Add a metabox context after the title.
+	 * Add a 'Hide Title' checkbox after the title.
 	 *
 	 * @param WP_Post $post
 	 */

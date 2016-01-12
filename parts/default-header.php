@@ -19,12 +19,31 @@ if ( is_archive() ) {
 ?>">
 		<div id="cahnrs-heading">
 			<a href="http://cahnrs.wsu.edu/">CAHNRS</a>
+			<?php /*
+				$response = wp_remote_get( 'https://cahnrs.wsu.edu/wp-json/wp/v2/global-menu' );
+				if ( ! is_wp_error( $response ) ) :
+					$data = wp_remote_retrieve_body( $response );
+					if ( ! empty( $data ) ) :
+						$cahnrs_global_menu = json_decode( $data );
+						?>
+						<div class="quicklinks">
+							<dl>
+								<dt><a href="http://cahnrs.wsu.edu/">College of Agricultural, Human, and Natural Resource Sciences</a></dt>
+								<span class="cahnrs-ql-padding">CAHNRS</span><dd>
+					 			<?php echo $cahnrs_global_menu; ?>
+								</dd>
+							</dl>
+						</div>
+        		<?php
+					endif;
+				endif;*/
+			?>
 			<div class="quicklinks">
 				<dl>
 					<dt><a href="http://cahnrs.wsu.edu/">College of Agricultural, Human, and Natural Resource Sciences</a></dt>
 					<span class="cahnrs-ql-padding">CAHNRS</span><dd>
 						 <ul>
-							<li><a href="http://cahnrs.wsu.edu/academics/">Students</a></li>
+							<li><a href="http://cahnrs.wsu.edu/academics/">Academics</a></li>
 							<li><a href="http://cahnrs.wsu.edu/research/">Research</a></li>
 							<li><a href="http://cahnrs.wsu.edu/extension/">Extension</a></li>
 							<li><a href="http://cahnrs.wsu.edu/alumni/">Alumni and Friends</a></li>

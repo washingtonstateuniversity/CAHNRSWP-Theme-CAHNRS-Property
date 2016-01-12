@@ -12,15 +12,16 @@ function cahnrswp_site_header() {
 class WSU_CAHNRS_Property_Theme {
 	
 	public function __construct() {
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'init', array( $this, 'remove_header_meta' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 1 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'dequeue_scripts' ), 21 );
 		add_action( 'cahnrswp_site_header', array( $this, 'cahnrswp_default_header' ), 1 );
 		add_action( 'edit_form_after_title', array( $this, 'edit_form_after_title' ), 1 );
 		add_action( 'add_meta_boxes', array( $this, 'add_meta_boxes' ), 10, 1 );
 		add_action( 'save_post', array( $this, 'save_post' ), 10, 2 );
-		add_filter( 'mce_buttons_2', array( $this, 'mce_buttons_2' ) );
+		add_filter( 'tiny_mce_plugins', array( $this, 'disable_emojis_tinymce' ) );
 		add_filter( 'mce_external_plugins', array( $this, 'mce_external_plugins' ) );
+		add_filter( 'mce_buttons_2', array( $this, 'mce_buttons_2' ) );
 		add_filter( 'theme_page_templates', array( $this, 'theme_page_templates' ) );
 		add_filter( 'body_class', array( $this, 'body_class' ) );
 	}
@@ -28,7 +29,7 @@ class WSU_CAHNRS_Property_Theme {
 	/**
  	 * Remove certain things Wordpress adds to the header.
  	 */
-	public function init() {
+	public function remove_header_meta() {
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 		remove_action( 'wp_print_styles', 'print_emoji_styles' );
@@ -47,21 +48,6 @@ class WSU_CAHNRS_Property_Theme {
 		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
 		remove_action( 'wp_head', 'rel_canonical');
 		remove_action( 'wp_head', 'wp_generator' );
-		add_filter( 'tiny_mce_plugins', array( $this, 'disable_emojis_tinymce' ) );
-	}
-
-	/**
-	 * Filter function to remove the tinymce emoji plugin.
-	 *
-	 * @param array $plugins
-	 * @return array Difference betwen the two arrays
-	 */
-	public function disable_emojis_tinymce( $plugins ) {
-		if ( is_array( $plugins ) ) {
-			return array_diff( $plugins, array( 'wpemoji' ) );
-		} else {
-			return array();
-		}
 	}
 
 	/**
@@ -87,7 +73,7 @@ class WSU_CAHNRS_Property_Theme {
 	}
 
 	/**
-	 * Add the default header via hook.
+	 * Add the default CAHNRS header via hook.
 	 */
 	public function cahnrswp_default_header() {
 		get_template_part( 'parts/default-header' );
@@ -197,15 +183,26 @@ class WSU_CAHNRS_Property_Theme {
 	}
 
 	/**
-	 * Add Table controls to tinyMCE editor.
+	 * Filter function to remove the tinymce emoji plugin.
+	 *
+	 * @param array $plugins The list of default TinyMCE plugins.
+	 *
+	 * @return array Modified list of default TinyMCE plugins.
 	 */
-	public function mce_buttons_2( $buttons ) {
-		array_push( $buttons, 'table' );
-		return $buttons;
+	public function disable_emojis_tinymce( $plugins ) {
+		if ( is_array( $plugins ) ) {
+			return array_diff( $plugins, array( 'wpemoji' ) );
+		} else {
+			return array();
+		}
 	}
 
 	/**
 	 * Register the tinyMCE Table plugin.
+	 *
+	 * @param array $plugin_array The list of TinyMCE external plugins.
+	 *
+	 * @return array Modified list of TinyMCE external plugins.
 	 */
 	public function mce_external_plugins( $plugin_array ) {
 		$plugin_array['table'] = get_stylesheet_directory_uri() . '/tinymce/table-plugin.min.js';
@@ -213,7 +210,23 @@ class WSU_CAHNRS_Property_Theme {
 	}
 
 	/**
-	 * Remove most of the Spine page templates.
+	 * Add Table controls to tinyMCE editor.
+	 *
+	 * @param array $buttons The list of second-row TinyMCE buttons (Visual tab).
+	 *
+	 * @return array Modified list of second-row TinyMCE buttons.
+	 */
+	public function mce_buttons_2( $buttons ) {
+		array_push( $buttons, 'table' );
+		return $buttons;
+	}
+
+	/**
+	 * Remove the Spine page templates.
+	 *
+	 * @param array $templates The list of page templates from the Spine theme.
+	 *
+	 * @return array Modified list of page templates.
 	 */
 	public function theme_page_templates( $templates ) {
 		unset( $templates['templates/blank.php'] );
@@ -228,7 +241,11 @@ class WSU_CAHNRS_Property_Theme {
 	}
 
 	/**
-	 * Body classes.
+	 * Add custom body classes.
+	 *
+	 * @param array $classes Current list of body classes.
+	 *
+	 * @return array Modified list of body classes.
 	 */
 	public function body_class( $classes ) {
 		if ( get_post_meta( get_the_ID(), 'body_class', true ) ) {

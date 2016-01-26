@@ -85,6 +85,25 @@ function extension_property_customize_register( $wp_customize ) {
 		'type'     => 'checkbox',
 	));
 
+	$wp_customize->add_setting('spine_options[cahnrs_header_unit_parent]', array(
+		'default'    => '',
+		'capability' => 'edit_theme_options',
+		'type'       => 'option'
+	));
+
+	$wp_customize->add_control('cahnrs_header_unit_parent', array(
+		'label'    => 'Unit Parent',
+		'section'  => 'cahnrs_header',
+		'settings' => 'spine_options[cahnrs_header_unit_parent]',
+		'type'     => 'select',
+		'choices'  => array(
+			''           => '— Select —',
+			'extension'  => 'Extension',
+			'research'   => 'Research',
+			'operations' => 'Operations'
+		),
+	));
+
 	$wp_customize->add_setting('spine_options[cahnrs_tooling]', array(
 		'default'    => '0',
 		'capability' => 'edit_theme_options',

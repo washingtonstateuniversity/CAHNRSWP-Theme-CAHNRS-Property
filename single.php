@@ -14,53 +14,57 @@ if ( spine_has_background_image() ) {
 
 	<?php get_template_part('parts/headers'); ?>
 
-	<?php if ( class_exists( 'CWP_Pagebuilder' ) && has_shortcode( get_the_content(), 'row' ) ) : ?>
+	<?php while ( have_posts() ) : the_post(); ?>
 
-		<div id="post-<?php the_ID(); ?>" <?php post_class( 'builder-layout' ); ?>>
+		<?php if ( class_exists( 'CWP_Pagebuilder' ) && has_shortcode( get_the_content(), 'row' ) ) : ?>
 
-			<header class="article-header">
-				<h1 class="article-title"><?php the_title(); ?></h1>
-			</header>
+			<div id="post-<?php the_ID(); ?>" <?php post_class( 'builder-layout' ); ?>>
 
-			<?php the_content(); ?>
+				<header class="article-header">
+					<hgroup>
+						<h1 class="article-title"><?php the_title(); ?></h1>
+					</hgroup>
+					<hgroup class="source">
+						<time class="article-date" datetime="<?php echo get_the_date( 'c' ); ?>"><?php echo get_the_date(); ?></time>
+						<cite class="article-author" role="author"><?php the_author_posts_link(); ?></cite>
+					</hgroup>
+				</header>
 
-		</div>
+				<?php the_content(); ?>
 
-	<?php else: ?>
+			</div>
 
-		<?php $sidebar = get_post_meta( get_the_ID(), '_cahnrswp_sidebar', true ); ?>
+		<?php else: ?>
 
-		<?php echo $sidebar; ?>
+			<?php $sidebar = get_post_meta( get_the_ID(), '_cahnrswp_sidebar', true ); ?>
 
-		<?php $layout = ( $sidebar ) ? 'side-right' : 'single'; ?>
+			<?php $layout = ( $sidebar ) ? 'side-right' : 'single'; ?>
 
-		<section class="row <?php echo $layout; ?> gutter pad-ends">
+			<section class="row <?php echo $layout; ?> gutter pad-ends">
 
-			<div class="column one">
-
-				<?php while ( have_posts() ) : the_post(); ?>
+				<div class="column one">
 
 					<?php get_template_part( 'articles/post', get_post_type() ) ?>
 
-				<?php endwhile; ?>
+				</div><!--/column-->
 
-			</div><!--/column-->
+				<?php if ( $sidebar ) : ?>
 
-			<?php if ( $sidebar ) : ?>
+					<div class="column two">
 
-				<div class="column two">
+						<?php if ( is_active_sidebar( $sidebar ) ) : ?>
+							<?php dynamic_sidebar( $sidebar ); ?>
+						<?php endif; ?>
 
-					<?php if ( is_active_sidebar( $sidebar ) ) : ?>
-						<?php dynamic_sidebar( $sidebar ); ?>
-					<?php endif; ?>
+					</div><!--/column two-->
 
-				</div><!--/column two-->
+				<?php endif; ?>
 
-			<?php endif; ?>
+			</section>
 
-		</section>
+		<?php endif; ?>
 
-	<?php endif; ?>
+	<?php endwhile; ?>
 
 	<footer class="main-footer">
 		<section class="row halves pager prevnext gutter pad-ends">

@@ -69,7 +69,9 @@ class WSU_CAHNRS_Property_Theme {
 	 */
 	public function dequeue_scripts() {
 		wp_dequeue_style( 'spine-theme-extra' );
-		wp_dequeue_style( 'spine-theme-child' );
+		if ( 'disable' !== spine_get_option( 'cahnrs_tooling' ) ) {
+			wp_dequeue_style( 'spine-theme-child' );
+		}
 	}
 
 	/**

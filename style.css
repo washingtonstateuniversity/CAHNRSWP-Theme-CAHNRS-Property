@@ -6,3 +6,228 @@ Author: CAHNRS Communications, Phil Cable
 Author URI: http://cahnrs.wsu.edu/communications/
 Template: spine
 */
+
+.builder-layout > .article-header {
+	padding: 2rem 2rem 0;
+}
+
+/* Nested. */
+@media only screen and (min-width:990px) {
+	.hybrid.max-1188 .row.single .row.single .column,
+	.hybrid.max-1386 .row.single .row.single .column {
+		width: 728px;
+	}
+	.hybrid.max-1188 .row.single .column .row.side-right .column.one,
+	.hybrid.max-1188 .row.single .column.row.side-right .column.one,
+	.hybrid.max-1386 .row.single .column .row.side-right .column.one,
+	.hybrid.max-1386 .row.single .column.row.side-right .column.one {
+		width: 496px;
+	}
+	.hybrid.max-1188 .row.single .column .row.side-right .column.two,
+	.hybrid.max-1188 .row.single .column.row.side-right .column.two,
+	.hybrid.max-1386 .row.single .column .row.side-right .column.two,
+	.hybrid.max-1386 .row.single .column.row.side-right .column.two {
+		width: 232px;
+	}
+}
+
+/* Increase column widths at wider max-widths. */
+@media only screen and (min-width:1188px) and (min-device-width:990px) {
+	.hybrid.max-1188 > main > .row.margin-left > .column.two,
+	.hybrid.max-1188 > main > .row.margin-right > .column.one,
+	.hybrid.max-1188 > main > div > .row.margin-left > .column.two,
+	.hybrid.max-1188 > main > div > .row.margin-right > .column.one,
+	.hybrid.max-1188 .cpb-section > .row.margin-left > .column.two,
+	.hybrid.max-1188 .cpb-section > .row.margin-right > .column.one,
+	.hybrid.max-1386 > main > .row.margin-left > .column.two,
+	.hybrid.max-1386 > main > .row.margin-right > .column.one,
+	.hybrid.max-1386 > main > div > .row.margin-left > .column.two,
+	.hybrid.max-1386 > main > div > .row.margin-right > .column.one,
+	.hybrid.max-1386 .cpb-section > .row.margin-left > .column.two,
+	.hybrid.max-1386 .cpb-section > .row.margin-right > .column.one {
+		width: 594px;
+	}
+	.hybrid.max-1188 > main > .row.margin-left > .column.one,
+	.hybrid.max-1188 > main > .row.margin-right > .column.two,
+	.hybrid.max-1188 > main > div > .row.margin-left > .column.one,
+	.hybrid.max-1188 > main > div > .row.margin-right > .column.two,
+	.hybrid.max-1188 .cpb-section > .row.margin-left > .column.one,
+	.hybrid.max-1188 .cpb-section > .row.margin-right > .column.two,
+	.hybrid.max-1386 > main > .row.margin-left > .column.one,
+	.hybrid.max-1386 > main > .row.margin-right > .column.two,
+	.hybrid.max-1386 > main > div > .row.margin-left > .column.one,
+	.hybrid.max-1386 > main > div > .row.margin-right > .column.two,
+	.hybrid.max-1386 .cpb-section > .row.margin-left > .column.one,
+	.hybrid.max-1386 .cpb-section > .row.margin-right > .column.two {
+		width: 198px;
+	}
+	.hybrid.max-1188 > main > .row.side-left > .column.two,
+	.hybrid.max-1188 > main > .row.side-right > .column.one,
+	.hybrid.max-1188 > main > div > .row.side-left > .column.two,
+	.hybrid.max-1188 > main > div > .row.side-right > .column.one,
+	.hybrid.max-1188 .cpb-section > .row.side-left > .column.two,
+	.hybrid.max-1188 .cpb-section > .row.side-right > .column.one,
+	.hybrid.max-1386 > main > .row.side-left > .column.two,
+	.hybrid.max-1386 > main > .row.side-right > .column.one,
+	.hybrid.max-1386 > main > div > .row.side-left > .column.two,
+	.hybrid.max-1386 > main > div > .row.side-right > .column.one,
+	.hybrid.max-1386 .cpb-section > .row.side-left > .column.two,
+	.hybrid.max-1386 .cpb-section > .row.side-right > .column.one {
+		width: 660px;
+	}
+	.hybrid.max-1188 > main > .row.side-left > .column.one,
+	.hybrid.max-1188 > main > .row.side-right > .column.two,
+	.hybrid.max-1188 > main > div > .row.side-left > .column.one,
+	.hybrid.max-1188 > main > div > .row.side-right > .column.two,
+	.hybrid.max-1188 .cpb-section > .row.side-left > .column.one,
+	.hybrid.max-1188 .cpb-section > .row.side-right > .column.two,
+	.hybrid.max-1386 > main > .row.side-left > .column.one,
+	.hybrid.max-1386 > main > .row.side-right > .column.two,
+	.hybrid.max-1386 > main > div > .row.side-left > .column.one,
+	.hybrid.max-1386 > main > div > .row.side-right > .column.two,
+	.hybrid.max-1386 .cpb-section > .row.side-left > .column.one,
+	.hybrid.max-1386 .cpb-section > .row.side-right > .column.two {
+		width: 330px;
+	}
+	.hybrid.max-1188 > main > .row.quarters > .column,
+	.hybrid.max-1188 > main > div > .row.quarters > .column,
+	.hybrid.max-1188 .cpb-section > .row.quarters > .column,
+	.hybrid.max-1386 > main > .row.quarters > .column,
+	.hybrid.max-1386 > main > div > .row.quarters > .column,
+	.hybrid.max-1386 .cpb-section > .row.quarters > .column {
+		width: 247px;
+	}
+	.hybrid.max-1188 > main > .row.thirds > .column,
+	.hybrid.max-1188 > main > div > .row.thirds > .column,
+	.hybrid.max-1188 .cpb-section > .row.thirds > .column,
+	.hybrid.max-1386 > main > .row.thirds > .column,
+	.hybrid.max-1386 > main > div > .row.thirds > .column,
+	.hybrid.max-1386 .cpb-section > .row.thirds > .column {
+		width: 330px;
+	}
+	.hybrid.max-1188 > main > .row.halves > .column,
+	.hybrid.max-1188 > main > div > .row.halves > .column,
+	.hybrid.max-1188 .cpb-section > .row.halves > .column,
+	.hybrid.max-1386 > main > .row.halves > .column,
+	.hybrid.max-1386 > main > div > .row.halves > .column,
+	.hybrid.max-1386 .cpb-section > .row.halves > .column {
+		width: 495px;
+	}
+	.hybrid.max-1188 > main > .row.single > .column,
+	.hybrid.max-1188 > main > div > .row.single > .column,
+	.hybrid.max-1188 .cpb-section > .row.single > .column,
+	.hybrid.max-1386 > main > .row.single > .column,
+	.hybrid.max-1386 > main > div > .row.single > .column,
+	.hybrid.max-1386 .cpb-section > .row.single > .column {
+		width: 990px;
+	}
+	/* Nested. */
+	.hybrid.max-1188 .row.single .row.single .column,
+	.hybrid.max-1386 .row.single .row.single .column {
+		width: 926px;
+	}
+	.hybrid.max-1188 .row.single .column .row.side-right .column.one,
+	.hybrid.max-1188 .row.single .column.row.side-right .column.one,
+	.hybrid.max-1386 .row.single .column .row.side-right .column.one,
+	.hybrid.max-1386 .row.single .column.row.side-right .column.one {
+		width: 628px;
+	}
+	.hybrid.max-1188 .row.single .column .row.side-right .column.two,
+	.hybrid.max-1188 .row.single .column.row.side-right .column.two,
+	.hybrid.max-1386 .row.single .column .row.side-right .column.two,
+	.hybrid.max-1386 .row.single .column.row.side-right .column.two {
+		width: 298px;
+	}
+	/*
+	.hybrid.max-1188 .row.side-right .column.one .row.side-right .column.one,
+	.hybrid.max-1188 .row.side-right .column.one.row.side-right .column.one,
+	.hybrid.max-1386 .row.side-right .column.one .row.side-right .column.one,
+	.hybrid.max-1386 .row.side-right .column.one.row.side-right .column.one {
+		
+	}
+	.hybrid.max-1188 .row.side-right .column.one .row.side-right .column.two,
+	.hybrid.max-1188 .row.side-right .column.one.row.side-right .column.two,
+	.hybrid.max-1386 .row.side-right .column.one .row.side-right .column.two,
+	.hybrid.max-1386 .row.side-right .column.one.row.side-right .column.two {
+		
+	}
+	.hybrid.max-1188 .row.side-right .column.two .row.side-right .column.one,
+	.hybrid.max-1188 .row.side-right .column.two.row.side-right .column.one,
+	.hybrid.max-1386 .row.side-right .column.two .row.side-right .column.one,
+	.hybrid.max-1386 .row.side-right .column.two.row.side-right .column.one {
+		
+	}
+	.hybrid.max-1188 .row.side-right .column.two .row.side-right .column.two,
+	.hybrid.max-1188 .row.side-right .column.two.row.side-right .column.two,
+	.hybrid.max-1386 .row.side-right .column.two .row.side-right .column.two,
+	.hybrid.max-1386 .row.side-right .column.two.row.side-right .column.two {
+		
+	}*/
+}
+@media only screen and (min-width:1386px) {
+	.hybrid.max-1386 > main > .row.margin-left > .column.two,
+	.hybrid.max-1386 > main > .row.margin-right > .column.one,
+	.hybrid.max-1386 > main > div > .row.margin-left > .column.two,
+	.hybrid.max-1386 > main > div > .row.margin-right > .column.one,
+	.hybrid.max-1386 .cpb-section > .row.margin-left > .column.two,
+	.hybrid.max-1386 .cpb-section > .row.margin-right > .column.one {
+		width: 594px;
+	}
+	.hybrid.max-1386 > main > .row.margin-left > .column.one,
+	.hybrid.max-1386 > main > .row.margin-right > .column.two,
+	.hybrid.max-1386 > main > div > .row.margin-left > .column.one,
+	.hybrid.max-1386 > main > div > .row.margin-right > .column.two,
+	.hybrid.max-1386 .cpb-section > .row.margin-left > .column.one,
+	.hybrid.max-1386 .cpb-section > .row.margin-right > .column.two {
+		width: 198px;
+	}
+	.hybrid.max-1386 > main > .row.side-left > .column.two,
+	.hybrid.max-1386 > main > .row.side-right > .column.one,
+	.hybrid.max-1386 > main > div > .row.side-left > .column.two,
+	.hybrid.max-1386 > main > div > .row.side-right > .column.one,
+	.hybrid.max-1386 .cpb-section > .row.side-left > .column.two,
+	.hybrid.max-1386 .cpb-section > .row.side-right > .column.one {
+		width: 792px;
+	}
+	.hybrid.max-1386 > main > .row.side-left > .column.one,
+	.hybrid.max-1386 > main > .row.side-right > .column.two,
+	.hybrid.max-1386 > main > div > .row.side-left > .column.one,
+	.hybrid.max-1386 > main > div > .row.side-right > .column.two,
+	.hybrid.max-1386 .cpb-section > .row.side-left > .column.one,
+	.hybrid.max-1386 .cpb-section > .row.side-right > .column.two {
+		width: 396px;
+	}
+	.hybrid.max-1386 > main > .row.quarters > .column,
+	.hybrid.max-1386 > main > div > .row.quarters > .column,
+	.hybrid.max-1386 .cpb-section > .row.quarters > .column {
+		width: 297px;
+	}
+	.hybrid.max-1386 > main > .row.thirds > .column,
+	.hybrid.max-1386 > main > div > .row.thirds > .column,
+	.hybrid.max-1386 .cpb-section > .row.thirds > .column {
+		width: 396px;
+	}
+	.hybrid.max-1386 > main > .row.halves > .column,
+	.hybrid.max-1386 > main > div > .row.halves > .column,
+	.hybrid.max-1386 .cpb-section > .row.halves > .column {
+		width: 594px;
+	}
+	.hybrid.max-1386 > main > .row.single > .column,
+	.hybrid.max-1386 > main > div > .row.single > .column,
+	.hybrid.max-1386 .cpb-section > .row.single > .column {
+		width: 1188px;
+	}
+	/* Nested. */
+	.hybrid.max-1188 .row.single .row.single .column,
+	.hybrid.max-1386 .row.single .row.single .column {
+		width: 1124px;
+	}
+	.hybrid.max-1386 .row.single .column .row.side-right .column.one,
+	.hybrid.max-1386 .row.single .column.row.side-right .column.one {
+		width: 760px;
+	}
+	.hybrid.max-1386 .row.single .column .row.side-right .column.two,
+	.hybrid.max-1386 .row.single .column.row.side-right .column.two {
+		width: 364px;
+	}
+}

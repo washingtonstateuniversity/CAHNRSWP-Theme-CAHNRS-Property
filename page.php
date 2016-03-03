@@ -9,7 +9,7 @@
 
 			<?php $hide_title = get_post_meta( get_the_ID(), '_cahnrswp_hide_title', true ); ?>
 
-      <?php if ( class_exists( 'CWP_Pagebuilder' ) && has_shortcode( get_the_content(), 'row' ) ) : ?>
+      <?php if ( ( class_exists( 'CAHNRS_Pagebuilder_Plugin' ) || class_exists( 'CWP_Pagebuilder' ) ) && has_shortcode( get_the_content(), 'row' ) ) : ?>
 
 			<div id="page-<?php the_ID(); ?>" <?php post_class( 'builder-layout' ); ?>>
 

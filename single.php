@@ -16,7 +16,7 @@ if ( spine_has_background_image() ) {
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php if ( class_exists( 'CWP_Pagebuilder' ) && has_shortcode( get_the_content(), 'row' ) ) : ?>
+		<?php if ( ( class_exists( 'CAHNRS_Pagebuilder_Plugin' ) || class_exists( 'CWP_Pagebuilder' ) ) && has_shortcode( get_the_content(), 'row' ) ) : ?>
 
 			<div id="post-<?php the_ID(); ?>" <?php post_class( 'builder-layout' ); ?>>
 

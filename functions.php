@@ -59,8 +59,8 @@ class WSU_CAHNRS_Property_Theme {
 			$cahnrs_tooling = 0;
 		}
 		if ( 'disable' !== $cahnrs_tooling ) {
-			wp_enqueue_style( 'cahnrs', 'http://repo.wsu.edu/cahnrs/' . $cahnrs_tooling . '/cahnrs.min.css', array( 'spine-theme' ) );
-			wp_enqueue_script( 'cahnrs', 'http://repo.wsu.edu/cahnrs/' . $cahnrs_tooling . '/cahnrs.min.js', array( 'jquery' ) );
+			wp_enqueue_style( 'cahnrs', 'https://repo.wsu.edu/cahnrs/' . $cahnrs_tooling . '/cahnrs.min.css', array( 'spine-theme' ) );
+			wp_enqueue_script( 'cahnrs', 'https://repo.wsu.edu/cahnrs/' . $cahnrs_tooling . '/cahnrs.min.js', array( 'jquery' ) );
 		}
 	}
 

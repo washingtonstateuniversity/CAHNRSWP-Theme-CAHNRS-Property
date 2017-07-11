@@ -54,7 +54,14 @@ $parent_unit = spine_get_option( 'cahnrs_header_unit_parent' );
 					</dd>
 				</dl>
 			</div>
-		</div><?php if ( $parent_unit ) : ?><div id="extension-heading">
+		</div><?php if ( is_nav_menu( 'unit-menu') ):?>
+		<?php wp_nav_menu( array( 'menu' => 'unit-menu' ) );?>
+		<script>jQuery('.menu-unit-menu-container').hover(
+			function(){ jQuery( '.menu-unit-menu-container > .menu > li > ul' ).stop(); jQuery('.menu-unit-menu-container > .menu > li > ul').slideDown('medium');},
+			function(){ jQuery( '.menu-unit-menu-container > .menu > li > ul' ).stop(); jQuery('.menu-unit-menu-container > .menu > li > ul').slideUp('medium');
+			 }
+		);</script>
+		<?php endif;?><?php if ( $parent_unit ) : ?><div id="extension-heading">
 			<?php
 				if ( 'extension' === $parent_unit ) {
 					$parent_unit_url = 'https://extension.wsu.edu/';

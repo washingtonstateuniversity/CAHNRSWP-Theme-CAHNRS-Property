@@ -54,6 +54,9 @@ class WSU_CAHNRS_Property_Theme {
 	 * Enqueue scripts and styles required for front end pageviews.
 	 */
 	public function enqueue_scripts() {
+		
+		wp_enqueue_style( 'cahnrs-properties-updated', get_stylesheet_directory_uri(). '/updated-style.css', array( 'spine-theme' ), '0.0.1' );
+		
 		$cahnrs_tooling = spine_get_option( 'cahnrs_tooling' );
 		if ( 'develop' !== $cahnrs_tooling && 'disable' !== $cahnrs_tooling && 0 === absint( $cahnrs_tooling ) ) {
 			$cahnrs_tooling = 0;

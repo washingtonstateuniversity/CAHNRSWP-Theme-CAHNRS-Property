@@ -1,0 +1,42 @@
+/* CSS Document */
+
+/* CAHNRS Header */
+.menu-unit-menu-container ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.menu-unit-menu-container li {
+	margin: 0;
+	padding: 0;
+}
+.menu-unit-menu-container .menu > li {
+	position: relative;
+	border-right: 1px solid #fff;
+	margin-right: 1rem;
+}
+.menu-unit-menu-container .menu > li > a{
+	display:block;
+	padding-right: 1rem;
+}
+.menu-unit-menu-container .menu > li > ul {
+	padding: 1.5rem 1rem 1rem;
+	position: absolute;
+	top: 100%;
+	left: -1rem;
+	background: #5e6a71;
+}
+.menu-unit-menu-container .menu > li > ul > li > a  {
+	font-weight: bold;
+}
+.menu-unit-menu-container .menu > li > ul > li > ul  {
+	margin-left: 40px;
+}
+.menu-unit-menu-container .menu > li > ul > li > ul > li > a  {
+	display: block;
+	padding: 5px 0;
+}
+#cahnrs-heading .menu > li > a {
+    -webkit-transition: border-right-color .8s ease-in-out;
+    transition: border-right-color .8s ease-in-out;
+}

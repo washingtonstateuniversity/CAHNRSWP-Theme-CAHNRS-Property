@@ -1,11 +1,18 @@
 /*
 Theme Name: CAHNRS Property
 Description: A WSU Spine child theme for CAHNRS web properties.
-Version: 1.0.1
+Version: 1.0.2
 Author: CAHNRS Communications, Phil Cable
 Author URI: http://cahnrs.wsu.edu/communications/
 Template: spine
 */
+
+/* CAHNRS Header */
+.menu-unit-menu-container ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
 
 .builder-layout > .article-header {
 	padding: 2rem 2rem 0;
